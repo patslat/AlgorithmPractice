@@ -51,6 +51,3 @@ end
 #  test = (1..5000).to_a.shuffle!
 #  p merge_sort(test)
 #  p merge_sort(test) == (1..5000).to_a
-
-
-
