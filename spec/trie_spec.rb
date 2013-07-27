@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../trie.rb'
+require 'trie'
 
 describe Trie do
   subject { Trie.new }
