@@ -53,7 +53,7 @@ class RBTree
 
   def search(key)
     current = @root
-    until current.key == key
+    until current == @sentinel || current.key == key
       current = key <= current.key ? current.left : current.right
     end
     current
@@ -67,7 +67,6 @@ class RBTree
     else
       delete_one_child(node)
     end
-
   end
 
   private
@@ -91,6 +90,8 @@ class RBTree
   end
 
   def delete_two_child(node)
+    p "inorder succ is #{node.inorder_successor}"
+    p node.inorder_successor.key
     new_node = node.inorder_successor
     node.key = new_node.key
     transplant(node, @sentinel)
@@ -291,8 +292,15 @@ class RBNode
 #  def inorder_predecessor
 #  end
 #
-#  def inorder_successor
-#  end
+  def inorder_successor
+    current = self.left
+    next_node = self.left
+    until next_node == @sentinel
+      current = next_node
+      next_node = current.right
+    end
+    return current
+  end
 
   def is_left_child?
     self == parent.left
@@ -326,10 +334,10 @@ class RBNode
   end
 end
 
-#  t = RBTree.new
-#  10.times do |n|
-#    t.insert n
-#    p t.to_a
-#  end
-#
-#  p t.root.left
+t = RBTree.new
+10.times do |n|
+  t.insert n
+end
+p t.to_a
+t.delete(3)
+p t.to_a

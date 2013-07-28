@@ -156,4 +156,15 @@ describe RBTree do
       subject.root.right.right.key.should == 12
     end
   end
+
+  describe "#delete" do
+    it "removes a node from the tree" do
+      10.times do |n|
+        subject.insert(n)
+      end
+      subject.delete(5)
+
+      subject.search(5).key.should == nil
+    end
+  end
 end
