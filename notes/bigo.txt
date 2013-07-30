@@ -1,0 +1,17 @@
+BIG THETA
+for a given function g(n), we denote by THETA(g(n)) = {f(n) : there
+exist positive constants c1, c2 and n0 such that 0 <= c1g(n) <= f(n) <=
+c2g(N) for all n >= n0}
+THETA means f(n) can be sandwiched between c1g(n) and c2g(n)
+
+THETA binds a function from above and below
+
+BIG O is an asymptotic upper bound
+
+O(g(n)) = {f(n): there exist positive constants c and n0 such
+that 0 <= f(n) <= cg(n) for all n >= n0}
+
+BIG OMEGA is the asymptotic lower bound
+OMEGA(g(n)) = {f(n): there exist positive constraints c and n0 such
+that 0 <= cg(n) <= f(n) for all n >= n0}
+

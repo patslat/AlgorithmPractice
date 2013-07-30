@@ -1,0 +1,20 @@
+# direct addressing works well when the universe U of keys is reasonably  small
+#
+# a direct address table is an array where each slot corresponds to a single
+# key in U
+#
+# Hash table
+# handle collisions with chaining
+# given a hash table T with m slots that stores n elements, we define a load
+# factor alpha for T as n/m, that is the average number of elements sotred
+# in a chain.
+#
+# Worst case performance of a hash table is big theta(n), all n keys hash to
+# the same slot.
+#
+# simple uniform hashing: assumption that any given element is equally likely
+# to hash into any of the m slots, independently of where any other element
+# is hashed
+#
+# time required to search for any element k depends lineraly on the length of
+# nsubh(k) of the list T[h(k)].
